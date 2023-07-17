@@ -16,6 +16,7 @@ namespace GenericCourse.IdentityServer
             {
                 new ApiResource("resource_catalog"){Scopes = {"catalog_fullpermission"}},
                 new ApiResource("resource_image_stock"){Scopes = {"image_stock_fullpermission"}},
+                new ApiResource("resource_basket"){Scopes = {"basket_fullpermission"}},
                 new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -33,6 +34,7 @@ namespace GenericCourse.IdentityServer
             {
                 new ApiScope("catalog_fullpermission", "Catalog API full access"),
                 new ApiScope("image_stock_fullpermission", "Image Stock API full access"),
+                new ApiScope("basket_fullpermission", "Basket API full access"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -55,6 +57,7 @@ namespace GenericCourse.IdentityServer
                     ClientSecrets = {new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ResourceOwnerPassword,
                     AllowedScopes = {
+                        "basket_fullpermission",
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
