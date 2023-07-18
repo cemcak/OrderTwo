@@ -2,5 +2,6 @@ Services
 	-catalogAPI => 5011
 	-basketAPI => 5013
 	-discountAPI => 5014
+	-orderAPI => 5015
 
 Identity => 5001
