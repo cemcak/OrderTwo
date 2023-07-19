@@ -15,9 +15,9 @@ namespace GenericCourse.IdentityServer
             new ApiResource[]
             {
                 new ApiResource("resource_catalog"){Scopes = {"catalog_fullpermission"}},
-                new ApiResource("resource_image_stock"){Scopes = {"image_stock_fullpermission"}},
                 new ApiResource("resource_basket"){Scopes = {"basket_fullpermission"}},
                 new ApiResource("resource_discount"){Scopes = {"discount_fullpermission"}},
+                new ApiResource("resource_order"){Scopes = {"order_fullpermission"}},
                 new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -34,9 +34,9 @@ namespace GenericCourse.IdentityServer
             new ApiScope[]
             {
                 new ApiScope("catalog_fullpermission", "Catalog API full access"),
-                new ApiScope("image_stock_fullpermission", "Image Stock API full access"),
                 new ApiScope("basket_fullpermission", "Basket API full access"),
                 new ApiScope("discount_fullpermission", "Discount API full access"),
+                new ApiScope("order_fullpermission", "Order API full access"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -49,7 +49,7 @@ namespace GenericCourse.IdentityServer
                     ClientId = "WebMvcClient",
                     ClientSecrets = {new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    AllowedScopes = { "catalog_fullpermission", "image_stock_fullpermission", IdentityServerConstants.LocalApi.ScopeName }
+                    AllowedScopes = { "catalog_fullpermission", IdentityServerConstants.LocalApi.ScopeName }
                 },
                 new Client
                 {
@@ -61,6 +61,7 @@ namespace GenericCourse.IdentityServer
                     AllowedScopes = {
                         "basket_fullpermission",
                         "discount_fullpermission",
+                        "order_fullpermission",
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
