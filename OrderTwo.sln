@@ -42,6 +42,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericCourse.Services.Orde
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericCourse.Shared", "Shared\GenericCourse.Shared\GenericCourse.Shared.csproj", "{86D15E8F-AE78-46CB-A967-B2D841EC4FEA}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FakePayment", "FakePayment", "{E8BCAF03-DE5F-4F5C-A1F9-CA3D5D7E51AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericCourse.Services.FakePayment", "Services\FakePayment\GenericCourse.Services.FakePayment\GenericCourse.Services.FakePayment.csproj", "{11C3C699-BEB6-4A16-A196-1426BE4628DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -88,6 +92,10 @@ Global
 		{86D15E8F-AE78-46CB-A967-B2D841EC4FEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{86D15E8F-AE78-46CB-A967-B2D841EC4FEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{86D15E8F-AE78-46CB-A967-B2D841EC4FEA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11C3C699-BEB6-4A16-A196-1426BE4628DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11C3C699-BEB6-4A16-A196-1426BE4628DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11C3C699-BEB6-4A16-A196-1426BE4628DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11C3C699-BEB6-4A16-A196-1426BE4628DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -107,6 +115,8 @@ Global
 		{E24FF7E3-68FD-4CF5-8348-F60794AEA7BF} = {19C55489-9B8A-4B9E-B634-223E0D5F5048}
 		{40D0D880-425A-40C4-84CA-A2851B3AC9CE} = {19C55489-9B8A-4B9E-B634-223E0D5F5048}
 		{86D15E8F-AE78-46CB-A967-B2D841EC4FEA} = {FA21E51C-5F18-47C9-B2FE-CFEA310519FA}
+		{E8BCAF03-DE5F-4F5C-A1F9-CA3D5D7E51AB} = {1A50FA0E-99D7-447E-B1B3-834DCEFB6DF7}
+		{11C3C699-BEB6-4A16-A196-1426BE4628DB} = {E8BCAF03-DE5F-4F5C-A1F9-CA3D5D7E51AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {BCBC2ECF-870C-483F-B7B7-345E199ED5AE}
