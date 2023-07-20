@@ -1,3 +1,4 @@
+using GenericCourse.Services.Catalog.DTOs;
 using GenericCourse.Services.Catalog.Services;
 using GenericCourse.Services.Catalog.Settings;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -62,6 +63,19 @@ builder.Services.AddSwaggerGen(options =>
 
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var serviceProvider = scope.ServiceProvider;
+
+    var categoryService = serviceProvider.GetRequiredService<ICategoryService>();
+
+    if (!categoryService.GetAllAsync().Result.Data.Any())
+    {
+        categoryService.CreateAsync(new CategoryDTO { Name = "Sub Category" }).Wait();
+        categoryService.CreateAsync(new CategoryDTO { Name = "Sub Category 2" }).Wait();
+    }
+}
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
