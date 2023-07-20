@@ -18,7 +18,8 @@ namespace GenericCourse.IdentityServer
                 new ApiResource("resource_basket"){Scopes = {"basket_fullpermission"}},
                 new ApiResource("resource_discount"){Scopes = {"discount_fullpermission"}},
                 new ApiResource("resource_order"){Scopes = {"order_fullpermission"}},
-                new ApiResource("resource_payment"){Scopes = {"payment_fullpermission"}},
+                new ApiResource("resource_fakepayment"){Scopes = {"fakepayment_fullpermission"}},
+                new ApiResource("resource_gateway"){Scopes = {"gateway_fullpermission"}},
                 new ApiResource(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -38,7 +39,8 @@ namespace GenericCourse.IdentityServer
                 new ApiScope("basket_fullpermission", "Basket API full access"),
                 new ApiScope("discount_fullpermission", "Discount API full access"),
                 new ApiScope("order_fullpermission", "Order API full access"),
-                new ApiScope("payment_fullpermission", "Payment API full access"),
+                new ApiScope("fakepayment_fullpermission", "Fake Payment API full access"),
+                new ApiScope("gateway_fullpermission", "Gateway API full access"),
                 new ApiScope(IdentityServerConstants.LocalApi.ScopeName)
             };
 
@@ -51,7 +53,7 @@ namespace GenericCourse.IdentityServer
                     ClientId = "WebMvcClient",
                     ClientSecrets = {new Secret("secret".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                    AllowedScopes = { "catalog_fullpermission", IdentityServerConstants.LocalApi.ScopeName }
+                    AllowedScopes = { "catalog_fullpermission", IdentityServerConstants.LocalApi.ScopeName, "gateway_fullpermission" }
                 },
                 new Client
                 {
@@ -64,7 +66,8 @@ namespace GenericCourse.IdentityServer
                         "basket_fullpermission",
                         "discount_fullpermission",
                         "order_fullpermission",
-                        "payment_fullpermission",
+                        "fakepayment_fullpermission",
+                        "gateway_fullpermission",
                         IdentityServerConstants.StandardScopes.Email,
                         IdentityServerConstants.StandardScopes.OpenId,
                         IdentityServerConstants.StandardScopes.Profile,
